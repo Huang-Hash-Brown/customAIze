@@ -1,6 +1,22 @@
-export default {
+module.exports = {
   extends: ['@commitlint/config-conventional'],
-  prompt: {
-    useEmoji: true,
+  rules: {
+    'type-enum': [
+      2,
+      'always',
+      [
+        'feat',
+        'fix',
+        'docs',
+        'style',
+        'refactor',
+        'perf',
+        'test',
+        'build',
+        'ci',
+        'chore',
+        'revert',
+      ],
+    ],
   },
 };

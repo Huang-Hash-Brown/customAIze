@@ -1,0 +1,7 @@
+# post-commit: After submission, if it is a merge submission and involves modifications to dependent files, pnpm install will be automatically run.
+if [ $(git rev-list --parents -n 1 HEAD | wc -w) -gt 2 ]; then
+  if git diff-tree -r --name-only --no-commit-id HEAD HEAD^ | grep -q "^package.json\|^pnpm-lock.yaml"; then
+    echo "\n\033[33m📦 Package files changed in merge commit. Running pnpm install...\033[0m\n"
+    exec pnpm install
+  fi
+fi

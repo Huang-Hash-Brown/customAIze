@@ -1,0 +1,5 @@
+# post-checkout: Check changes in dependent files after branch switching and automatically run pnpm install.
+if [ $3 = 1 ] && git diff --name-only $1 $2 | grep -q "^package.json\|^pnpm-lock.yaml"; then
+  echo "\n\033[33m📦 Package files changed. Running pnpm install...\033[0m\n"
+  exec pnpm install
+fi

@@ -18,7 +18,8 @@
     "preview": "vite preview",
     "lint": "eslint 'src/*.{js,jsx,ts,tsx}' 'src/**/*.{js,jsx,ts,tsx}' --fix",
     "format": "prettier --write 'src/*.{js,jsx,ts,tsx}' 'src/**/*.{js,jsx,ts,tsx,json,css,scss,md}'",
-    "commit": "git add . && git-cz"
+    "commit": "git add . && git-cz",
+    "type:check": "tsc --noEmit"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.2",
@@ -37,8 +38,8 @@
     "@eslint/compat": "^1.2.6",
     "@tailwindcss/postcss": "^4.0.6",
     "@tailwindcss/vite": "^4.0.6",
-    "@types/node": "^22.13.2",
-    "@types/react": "^19.0.8",
+    "@types/node": "^22.13.4",
+    "@types/react": "^19.0.9",
     "@types/react-dom": "^19.0.3",
     "@types/styled-components": "^5.1.34",
     "@typescript-eslint/eslint-plugin": "^8.24.0",

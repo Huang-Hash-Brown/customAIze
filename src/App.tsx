@@ -6,7 +6,7 @@ const App: React.FC = () => {
   return (
     <>
       <h1>Welcome to customAIze!</h1>
-      <Button>Click me</Button>
+      <Button>Click me!</Button>
     </>
   );
 };

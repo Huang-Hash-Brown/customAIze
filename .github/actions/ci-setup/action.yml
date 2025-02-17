@@ -13,9 +13,8 @@ runs:
 
   steps:
     - name: Install pnpm
-      uses: pnpm/action-setup@v4
-      with:
-        version: ${{ inputs.pnpm-version }}
+      run: curl -fsSL https://get.pnpm.io/v${{ inputs.pnpm-version }}/pnpm.js | node - add --global pnpm
+      shell: bash
 
     - name: Install Node.js
       uses: actions/setup-node@v4

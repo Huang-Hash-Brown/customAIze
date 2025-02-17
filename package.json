@@ -18,7 +18,8 @@
     "preview": "vite preview",
     "lint": "eslint 'src/*.{js,jsx,ts,tsx}' 'src/**/*.{js,jsx,ts,tsx}' --fix",
     "format": "prettier --write 'src/*.{js,jsx,ts,tsx}' 'src/**/*.{js,jsx,ts,tsx,json,css,scss,md}'",
-    "commit": "git add . && git-cz"
+    "commit": "git add . && git-cz",
+    "type:check": "tsc --noEmit"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.2",

@@ -1,0 +1,5 @@
+# post-merge: Checks changes in dependent files after the merge operation is completed and automatically runs pnpm install.
+if git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD | grep -q "^package.json\|^pnpm-lock.yaml"; then
+  echo "\n\033[33m📦 Package files changed. Running pnpm install...\033[0m\n"
+  exec pnpm install
+fi

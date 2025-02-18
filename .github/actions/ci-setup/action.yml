@@ -14,11 +14,14 @@ runs:
   steps:
     - name: Install pnpm
       run: pnpm/action-setup@v4
+      shell: bash
 
     - name: Install Node.js
       uses: actions/setup-node@v4
       with:
         node-version: ${{ inputs.node-version }}
+      shell: bash
 
     - name: Install dependencies
       run: pnpm install
+      shell: bash

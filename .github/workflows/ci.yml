@@ -1,4 +1,5 @@
 name: CI
+description: 'Run linting and tests'
 
 on:
   pull_request:

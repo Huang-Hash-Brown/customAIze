@@ -1,4 +1,5 @@
 name: CI Setup
+description: 'Install dependencies and set up the environment'
 
 inputs:
   pnpm-version:
@@ -24,4 +25,5 @@ runs:
 
     - name: Install dependencies
       shell: bash
-      run: pnpm install
+      run: |
+        echo "Installing dependencies with pnpm version ${{ inputs.pnpm-version }} and node version ${{ inputs.node-version }}" && pnpm install

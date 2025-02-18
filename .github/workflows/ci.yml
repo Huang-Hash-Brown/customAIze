@@ -18,13 +18,11 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Run CI Setup Action
-        uses: ./.github/actions/ci-setup
-        with:
-          pnpm-version: 10.3.0
-          node-version: 22.13.1
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/ci-setup
 
       - name: Run Eslint
         run: pnpm lint

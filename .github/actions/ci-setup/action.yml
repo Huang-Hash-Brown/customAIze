@@ -1,0 +1,29 @@
+name: CI Setup
+description: 'Install dependencies and set up the environment'
+
+inputs:
+  pnpm-version:
+    required: false
+    default: '10.3.0'
+  node-version:
+    required: false
+    default: '22.13.1'
+
+runs:
+  using: composite
+  steps:
+    - name: Install pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: ${{ inputs.pnpm-version }}
+
+    - name: Install Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ inputs.node-version }}
+        cache: 'pnpm'
+
+    - name: Install dependencies
+      shell: bash
+      run: |
+        echo "Installing dependencies with pnpm version ${{ inputs.pnpm-version }} and node version ${{ inputs.node-version }}" && pnpm install

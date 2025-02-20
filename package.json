@@ -19,7 +19,8 @@
     "lint": "eslint 'src/*.{js,jsx,ts,tsx}' 'src/**/*.{js,jsx,ts,tsx}' --fix",
     "format": "prettier --write 'src/*.{js,jsx,ts,tsx}' 'src/**/*.{js,jsx,ts,tsx,json,css,scss,md}'",
     "commit": "git add . && git-cz",
-    "type:check": "tsc --noEmit"
+    "type:check": "tsc --noEmit",
+    "test:ut": "vitest"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.2",
@@ -38,6 +39,7 @@
     "@eslint/compat": "^1.2.6",
     "@tailwindcss/postcss": "^4.0.6",
     "@tailwindcss/vite": "^4.0.6",
+    "@testing-library/react-hooks": "^8.0.1",
     "@types/node": "^22.13.4",
     "@types/react": "^19.0.9",
     "@types/react-dom": "^19.0.3",
@@ -56,11 +58,14 @@
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^5.1.0",
     "husky": "^9.1.7",
+    "jsdom": "^26.0.0",
     "lint-staged": "^15.4.3",
     "postcss": "^8.5.2",
     "prettier": "^3.5.0",
+    "react-test-renderer": "^19.0.0",
     "tailwindcss": "^4.0.6",
-    "vite": "^6.1.0"
+    "vite": "^6.1.0",
+    "vitest": "^3.0.5"
   },
   "config": {
     "commitizen": {

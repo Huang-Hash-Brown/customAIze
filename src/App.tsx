@@ -1,12 +1,14 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
-import { Button } from '@/components/ui/button';
+import { AppRoutes } from '@/routes/app-routes';
 
 const App: React.FC = () => {
   return (
     <>
-      <h1>Welcome to customAIze!</h1>
-      <Button>Click me!</Button>
+      <BrowserRouter>
+        <AppRoutes />
+      </BrowserRouter>
     </>
   );
 };

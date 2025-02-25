@@ -1,9 +1,9 @@
-@import 'tailwindcss';
-
 @custom-variant dark (&:is(.dark *));
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import 'tailwindcss';
 
 @layer base {
   :root {
@@ -110,9 +110,9 @@
 
 @layer base {
   * {
-    @reference border-border outline-ring/50;
+    @apply border-border outline-ring/50;
   }
   body {
-    @reference bg-background text-foreground;
+    @apply bg-background text-foreground;
   }
 }

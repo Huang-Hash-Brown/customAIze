@@ -8,7 +8,7 @@ export default defineConfig({
   server: {
     open: false,
     proxy: {
-      '/api': 'http://localhost:8000',
+      '/api': process.env.VITE_APP_API_URL || 'http://localhost:8000',
     },
   },
   build: {
@@ -22,5 +22,8 @@ export default defineConfig({
       '@libs': path.resolve(__dirname, './src/libs'),
       '@routes': path.resolve(__dirname, './src/routes'),
     },
+  },
+  define: {
+    'process.env': process.env,
   },
 });

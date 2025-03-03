@@ -21,6 +21,7 @@ export default defineConfig({
       '@components': path.resolve(__dirname, './src/components'),
       '@libs': path.resolve(__dirname, './src/libs'),
       '@routes': path.resolve(__dirname, './src/routes'),
+      '@context': path.resolve(__dirname, './src/context'),
     },
   },
   define: {

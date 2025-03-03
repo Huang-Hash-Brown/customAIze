@@ -1,10 +1,13 @@
 import https from 'https';
 import http from 'http';
 
+import dotenv from 'dotenv';
 import express from 'express';
 import cors from 'cors';
 
 import chatRoutes from './routes/chat';
+
+dotenv.config();
 
 const PROTOCOL = process.env.SERVER_PROTOCOL || 'http';
 const HOST = process.env.SERVER_HOST || 'localhost';

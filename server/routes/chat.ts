@@ -6,12 +6,20 @@ import type { Request, Response } from 'express';
 const router = express.Router();
 
 // Load environment variables from .env file
-dotenv.config();
+dotenv.config({
+  path: '.env.local',
+});
 
-const AI_API_URL = 'https://openrouter.ai/api/v1/chat/completions';
-const AI_API_KEY = process.env.OPENAI_API_KEY;
+const AI_API_URL = process.env.AI_API_URL;
+const AI_API_KEY = process.env.AI_API_KEY;
 
 router.post('/', async (req: Request, res: Response) => {
+  if (!AI_API_URL || !AI_API_KEY) {
+    console.error('AI_API_URL and AI_API_KEY are required');
+    res.status(500).send('Server error');
+    return;
+  }
+
   const { messages } = req.body;
 
   // Set response headers for SSE (Server-Sent Events)

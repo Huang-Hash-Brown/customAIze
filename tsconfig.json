@@ -7,16 +7,20 @@
       "@components/*": ["./src/components/*"],
       "@libs/*": ["./src/libs/*"],
       "@routes/*": ["./src/routes/*"],
+      "@context/*": ["./src/context/*"],
     },
     "target": "ESNext",
     "module": "ESNext",
     "jsx": "react-jsx",
     "strict": true,
+    "outDir": "./dist",
+    "resolveJsonModule": true,
     "esModuleInterop": true,
     "moduleResolution": "Node",
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "allowJs": true
   },
-  "include": ["src"],
+  "include": ["src", "server", "vite-env.d.ts"],
   "exclude": ["node_modules", "dist"]
 }

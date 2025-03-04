@@ -1,10 +1,16 @@
-import { Button } from '@components/ui/button';
+import { ThreadList } from '@components/assistant-ui/thread-list';
+import { Thread } from '@components/assistant-ui/thread';
+import { AIAssistantProvider } from '@context/ai-assistant-provider';
 
 export const Home = () => {
   return (
     <>
-      <h1>Welcome to customAIze!</h1>
-      <Button>Click me!</Button>
+      <AIAssistantProvider>
+        <div className="grid h-full grid-cols-[200px_1fr]">
+          <ThreadList />
+          <Thread />
+        </div>
+      </AIAssistantProvider>
     </>
   );
 };

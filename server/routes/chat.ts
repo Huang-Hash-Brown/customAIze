@@ -12,6 +12,7 @@ dotenv.config({
 
 const AI_API_URL = process.env.AI_API_URL;
 const AI_API_KEY = process.env.AI_API_KEY;
+const AI_MODEL = process.env.AI_MODEL;
 
 router.post('/', async (req: Request, res: Response) => {
   if (!AI_API_URL || !AI_API_KEY) {
@@ -29,7 +30,7 @@ router.post('/', async (req: Request, res: Response) => {
 
   // Define the payload to send to the AI API
   const payload = {
-    model: 'google/gemini-2.0-flash-lite-preview-02-05:free', // Specify the AI model
+    model: AI_MODEL, // Specify the AI model
     messages, // Forward the messages from the client
     stream: true, // Enable streaming response
   };
